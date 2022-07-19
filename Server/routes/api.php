@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PersonagemController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/user', [UsuarioController::class, 'retornarTodos']);
+
+Route::get('/personagem', [PersonagemController::class, 'retornarTodos']);
