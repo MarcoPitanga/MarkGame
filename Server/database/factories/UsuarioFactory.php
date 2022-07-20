@@ -17,7 +17,7 @@ class UsuarioFactory extends Factory
     public function definition()
     {
         return [
-            'nome' => fake()->unique()->userName(),
+            'login' => fake()->unique()->userName(),
             'senha' => md5(fake()->password(3, 20)),
         ];
     }

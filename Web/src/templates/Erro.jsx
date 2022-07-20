@@ -6,7 +6,7 @@ export const Erro = () => {
 
   const handleClickVoltar = () => {
     console.log('retornou')
-    navigate('/')
+    navigate(-1)
   }
 
   return (

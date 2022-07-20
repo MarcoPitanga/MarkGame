@@ -21,6 +21,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/user', [UsuarioController::class, 'retornarTodos']);
+Route::get('/usuarios', [UsuarioController::class, 'listar']);
+Route::get('/usuario/{login}', [UsuarioController::class, 'buscar']);
+Route::post('/usuario/cadastrar', [UsuarioController::class, 'salvar']);
 
-Route::get('/personagem', [PersonagemController::class, 'retornarTodos']);
+Route::get('/personagem', [PersonagemController::class, 'listar']);

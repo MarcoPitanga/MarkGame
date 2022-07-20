@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Input } from '../components/Input'
 import { Card } from '../components/Card'
 import { Button } from '../components/Button'
@@ -8,6 +9,7 @@ export const Login = () => {
   const [usuario, setUsuario] = useState('')
   const [senha, setSenha] = useState('')
   const [feedback, setFeedback] = useState('')
+  let navigate = useNavigate('')
 
   const handleClickEntrar = () => {
     if (!usuario || !senha) {
@@ -15,6 +17,10 @@ export const Login = () => {
     } else {
       setFeedback('')
     }
+  }
+
+  const handleClickCadastro = () => {
+    navigate('/cadastro')
   }
 
   return (
@@ -34,7 +40,7 @@ export const Login = () => {
           <p className="text-md text-red-600">{feedback}</p>
           <hr className="mt-4 mb-5 border-orange-600" />
           <div className="flex justify-center">
-            <Button text="cadastrar" onClick={handleClickEntrar} />
+            <Button text="cadastrar" onClick={handleClickCadastro} />
           </div>
         </Card>
       </div>
