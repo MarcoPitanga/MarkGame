@@ -2,11 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './styles/tailwind-styles.css'
 
-import { Home } from './templates/Home'
+import { Login } from './templates/Login'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Home />
+    <Login />
   </React.StrictMode>,
   document.getElementById('root')
 )
