@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PersonagemController extends Controller
 {
-    protected function retornarTodos()
+    protected function listar()
     {
         $personagens = Personagem::all();
 
