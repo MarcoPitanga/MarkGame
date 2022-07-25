@@ -29,4 +29,10 @@ class UsuarioController extends Controller
         ]);
         return $usuario;
     }
+
+    protected function logar(Request $req)
+    {
+        $usuario = Usuario::where('login', $req['login'])->where('senha', md5($req['senha']))->get();
+        return $usuario;
+    }
 }

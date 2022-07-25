@@ -1,4 +1,4 @@
-export const Card = ({ titulo, children, className }) => {
+export const CardPublic = ({ titulo, children, className }) => {
   return (
     <div
       className={`lg:w-2/6 md:w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-7 flex flex-col md:ml-auto w-screen ${className}`}

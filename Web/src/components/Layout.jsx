@@ -1,10 +1,17 @@
 import { Footer } from '../components/Footer'
+import { Menu } from '../components/Menu'
 
 export const Layout = ({ children }) => {
   return (
-    <div className="w-screen h-screen bg-gray-900 text-gray-300">
-      {children}
+    <>
+      <div className="bg-gray-900 flex flex-col items-center w-screen h-screen">
+        <h1 className="text-orange-600 text-5xl">MarkGame</h1>
+        <div className="bg-gray-800 flex w-screen sm:w-2/3 h-5/6 md:h-4/5 mt-3 border border-orange-600 rounded-xl p-3">
+          <Menu />
+          <div className="w-full ml-2">{children}</div>
+        </div>
+      </div>
       <Footer />
-    </div>
+    </>
   )
 }

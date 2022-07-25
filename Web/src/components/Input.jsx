@@ -1,8 +1,11 @@
 export const Input = ({ type, titulo, valor, onChange, className }) => {
   return (
     <div className="relative mb-4">
-      <label className="leading-7 text-md text-gray-200">{titulo}</label>
+      <label htmlFor={titulo} className="leading-7 text-md text-gray-200">
+        {titulo}
+      </label>
       <input
+        id={titulo}
         type={type}
         value={valor}
         onChange={(e) => onChange(e.target.value)}

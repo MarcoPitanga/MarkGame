@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Input } from '../components/Input'
-import { Card } from '../components/Card'
+import { CardPublic } from '../components/CardPublic'
 import { Button } from '../components/Button'
 import { Footer } from '../components/Footer'
 import { Usuario } from '../model/Usuario'
@@ -48,7 +48,7 @@ export const Cadastro = () => {
             <span>Game</span>
           </div>
         </div>
-        <Card titulo="Cadastro">
+        <CardPublic titulo="Cadastro">
           <Input type="text" titulo="Usuario" valor={login} onChange={setLogin} />
           <Input type="password" titulo="Senha" valor={senha} onChange={setSenha} />
           <Input type="password" titulo="Confirmar Senha" valor={confirmarSenha} onChange={setConfirmarSenha} />
@@ -58,7 +58,7 @@ export const Cadastro = () => {
           <div className="flex justify-center">
             <Button text="Voltar" onClick={handleClickVoltar} />
           </div>
-        </Card>
+        </CardPublic>
       </div>
       <Footer />
     </div>
