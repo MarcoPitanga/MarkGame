@@ -1,19 +1,19 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Input } from '../components/Input'
-import { CardPublic } from '../components/CardPublic'
+import { CardForm } from '../components/CardForm'
 import { Button } from '../components/Button'
 import { Footer } from '../components/Footer'
-import { Usuario } from '../model/Usuario'
+import { AuthContext } from '../contexts/auth'
 
 export const Cadastro = () => {
+  const { cadastrar } = useContext(AuthContext)
+
   const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
   const [confirmarSenha, setConfirmarSenha] = useState('')
   const [feedback, setFeedback] = useState('')
-  let navigate = useNavigate('')
-
-  const usuario = new Usuario()
+  const navigate = useNavigate('')
 
   const handleClickEntrar = async () => {
     if (!login || !senha || !confirmarSenha) {
@@ -21,16 +21,11 @@ export const Cadastro = () => {
     } else if (senha !== confirmarSenha) {
       setFeedback('Digite as Senhas iguais')
     } else {
-      if (await usuario.buscar(login)) {
-        setFeedback('Usuario já existe')
-      } else {
+      if (cadastrar(login, senha)) {
         setFeedback('')
-        try {
-          usuario.cadastrar(login, senha)
-          navigate('/')
-        } catch (error) {
-          setFeedback('Erro desconhecido')
-        }
+        navigate('/')
+      } else {
+        setFeedback('Usuario já existe')
       }
     }
   }
@@ -48,7 +43,7 @@ export const Cadastro = () => {
             <span>Game</span>
           </div>
         </div>
-        <CardPublic titulo="Cadastro">
+        <CardForm titulo="Cadastro">
           <Input type="text" titulo="Usuario" valor={login} onChange={setLogin} />
           <Input type="password" titulo="Senha" valor={senha} onChange={setSenha} />
           <Input type="password" titulo="Confirmar Senha" valor={confirmarSenha} onChange={setConfirmarSenha} />
@@ -58,7 +53,7 @@ export const Cadastro = () => {
           <div className="flex justify-center">
             <Button text="Voltar" onClick={handleClickVoltar} />
           </div>
-        </CardPublic>
+        </CardForm>
       </div>
       <Footer />
     </div>

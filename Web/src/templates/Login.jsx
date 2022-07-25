@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Input } from '../components/Input'
-import { CardPublic } from '../components/CardPublic'
+import { CardForm } from '../components/CardForm'
 import { Button } from '../components/Button'
 import { Footer } from '../components/Footer'
 import { AuthContext } from '../contexts/auth'
@@ -36,7 +36,7 @@ export const Login = () => {
             <span>Game</span>
           </div>
         </div>
-        <CardPublic titulo="Login">
+        <CardForm titulo="Login">
           <Input type="text" titulo="Usuario" valor={login} onChange={setLogin} />
           <Input type="password" titulo="Senha" valor={senha} onChange={setSenha} />
           <p className="text-sm mb-4">Esqueceu sua senha?</p>
@@ -46,7 +46,7 @@ export const Login = () => {
           <div className="flex justify-center">
             <Button text="cadastrar" onClick={handleClickCadastro} />
           </div>
-        </CardPublic>
+        </CardForm>
       </div>
       <Footer />
     </div>

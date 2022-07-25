@@ -10,9 +10,22 @@ export const AuthProvider = ({ children }) => {
 
   const apiUsuario = new Usuario()
 
+  const cadastrar = async (login, senha) => {
+    if (!(await apiUsuario.buscar(login))) {
+      apiUsuario.cadastrar(login, senha)
+      return true
+    }
+    return false
+  }
   const logar = async (login, senha) => {
     if (await apiUsuario.verificarLogin(login, senha)) {
-      setUsuario({ id: apiUsuario.id, login: apiUsuario.login })
+      setUsuario({
+        id: apiUsuario.id,
+        login: apiUsuario.login,
+        total_respostas: apiUsuario.total_respostas,
+        respostas_certas: apiUsuario.respostas_certas,
+        respostas_erradas: apiUsuario.respostas_erradas
+      })
       navigate('/')
     }
   }
@@ -27,6 +40,7 @@ export const AuthProvider = ({ children }) => {
       value={{
         autenticado: Boolean(usuario),
         usuario,
+        cadastrar,
         logar,
         deslogar
       }}

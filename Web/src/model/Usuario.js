@@ -29,6 +29,9 @@ export class Usuario {
     if (resultado) {
       this.id = resultado.id
       this.login = resultado.login
+      this.total_respostas = resultado.total_respostas
+      this.respostas_certas = resultado.respostas_certas
+      this.respostas_erradas = resultado.respostas_erradas
       return true
     } else {
       return false
