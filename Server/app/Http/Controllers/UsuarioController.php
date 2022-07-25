@@ -10,7 +10,6 @@ class UsuarioController extends Controller
     protected function listar()
     {
         $usuarios = Usuario::all();
-
         return $usuarios;
     }
 
@@ -25,7 +24,7 @@ class UsuarioController extends Controller
     {
         $usuario =  Usuario::create([
             'login' => $req['login'],
-            'senha' => md5($req['senha'])
+            'senha' => md5($req['senha']),
         ]);
         return $usuario;
     }

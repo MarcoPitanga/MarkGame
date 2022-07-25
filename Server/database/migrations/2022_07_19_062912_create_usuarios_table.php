@@ -17,6 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('nome')->unique();
             $table->string('senha');
+            $table->integer('total_respostas')->default(0);
+            $table->integer('respostas_certas')->default(0);
+            $table->integer('respostas_erradas')->default(0);
             $table->timestamps();
         });
     }
