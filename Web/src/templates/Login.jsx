@@ -1,21 +1,25 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Input } from '../components/Input'
-import { Card } from '../components/Card'
+import { CardForm } from '../components/CardForm'
 import { Button } from '../components/Button'
 import { Footer } from '../components/Footer'
+import { AuthContext } from '../contexts/auth'
 
 export const Login = () => {
-  const [usuario, setUsuario] = useState('')
+  const { logar } = useContext(AuthContext)
+
+  const [login, setLogin] = useState('')
   const [senha, setSenha] = useState('')
   const [feedback, setFeedback] = useState('')
   let navigate = useNavigate('')
 
-  const handleClickEntrar = () => {
-    if (!usuario || !senha) {
+  const handleClickEntrar = async () => {
+    if (!login || !senha) {
       setFeedback('Preencha todos os campos')
     } else {
-      setFeedback('')
+      await logar(login, senha)
+      setFeedback('usuario ou senha invalida')
     }
   }
 
@@ -32,8 +36,8 @@ export const Login = () => {
             <span>Game</span>
           </div>
         </div>
-        <Card titulo="Login">
-          <Input type="text" titulo="Usuario" valor={usuario} onChange={setUsuario} />
+        <CardForm titulo="Login">
+          <Input type="text" titulo="Usuario" valor={login} onChange={setLogin} />
           <Input type="password" titulo="Senha" valor={senha} onChange={setSenha} />
           <p className="text-sm mb-4">Esqueceu sua senha?</p>
           <Button text="Entrar" onClick={handleClickEntrar} />
@@ -42,7 +46,7 @@ export const Login = () => {
           <div className="flex justify-center">
             <Button text="cadastrar" onClick={handleClickCadastro} />
           </div>
-        </Card>
+        </CardForm>
       </div>
       <Footer />
     </div>

@@ -1,10 +1,11 @@
-export const Card = ({ titulo, children, className }) => {
+export const Card = ({ children, className }) => {
   return (
-    <div
-      className={`lg:w-2/6 md:w-1/2 bg-gray-800 bg-opacity-50 rounded-lg p-7 flex flex-col md:ml-auto w-screen ${className}`}
-    >
-      <h2 className="text-orange-600 text-4xl font-medium title-font mb-4 text-center">{titulo}</h2>
-      {children}
-    </div>
+    <section className="text-gray-300 flex justify-center w-full ">
+      <div
+        className={`w-full md:w-2/3 lg:w-2/4 xl:w-2/4 border-2 border-b-8 border-orange-600 rounded-lg overflow-hidden p-2 xl:p-4 ${className}`}
+      >
+        {children}
+      </div>
+    </section>
   )
 }

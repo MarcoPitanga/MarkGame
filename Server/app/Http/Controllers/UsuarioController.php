@@ -10,7 +10,13 @@ class UsuarioController extends Controller
     protected function listar()
     {
         $usuarios = Usuario::all();
+        return $usuarios;
+    }
 
+    protected function listarOrdenado()
+    {
+        $usuarios['total_respostas'] = Usuario::orderBy('total_respostas', 'desc')->get();
+        $usuarios['respostas_certas'] = Usuario::orderBy('respostas_certas', 'desc')->get();
         return $usuarios;
     }
 
@@ -25,8 +31,14 @@ class UsuarioController extends Controller
     {
         $usuario =  Usuario::create([
             'login' => $req['login'],
-            'senha' => md5($req['senha'])
+            'senha' => md5($req['senha']),
         ]);
+        return $usuario;
+    }
+
+    protected function logar(Request $req)
+    {
+        $usuario = Usuario::where('login', $req['login'])->where('senha', md5($req['senha']))->get();
         return $usuario;
     }
 }

@@ -11,6 +11,9 @@ class Usuario extends Model
 
     protected $fillable = [
         'login',
-        'senha'
+        'senha',
+        'total_respostas',
+        'respostas_certas',
+        'respostas_erradas'
     ];
 }

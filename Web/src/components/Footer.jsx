@@ -1,7 +1,7 @@
-export const Footer = () => {
+export const Footer = ({ className }) => {
   return (
-    <footer className="text-gray-200 bg-orange-600">
-      <div className="container px-5 py-5 mx-auto flex items-center sm:flex-row flex-col">
+    <footer className={`md:absolute md:bottom-0 md:w-full text-gray-200 bg-orange-600 ${className}`}>
+      <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
         <a className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <h1 fill="none" className="w-8 h-8 px-2 text-orange-600 bg-gray-800 rounded-full">
             <span className=" text-2xl">M</span>
