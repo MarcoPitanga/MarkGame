@@ -37,4 +37,10 @@ export class Usuario {
       return false
     }
   }
+
+  async listar() {
+    const { data } = await api.get(`usuarios`)
+
+    return data
+  }
 }

@@ -17,6 +17,11 @@ export const AuthProvider = ({ children }) => {
     }
     return false
   }
+
+  const listar = async () => {
+    return await apiUsuario.listar()
+  }
+
   const logar = async (login, senha) => {
     if (await apiUsuario.verificarLogin(login, senha)) {
       setUsuario({
@@ -41,6 +46,7 @@ export const AuthProvider = ({ children }) => {
         autenticado: Boolean(usuario),
         usuario,
         cadastrar,
+        listar,
         logar,
         deslogar
       }}

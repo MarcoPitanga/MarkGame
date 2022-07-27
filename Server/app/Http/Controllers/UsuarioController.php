@@ -13,6 +13,13 @@ class UsuarioController extends Controller
         return $usuarios;
     }
 
+    protected function listarOrdenado()
+    {
+        $usuarios['total_respostas'] = Usuario::orderBy('total_respostas', 'desc')->get();
+        $usuarios['respostas_certas'] = Usuario::orderBy('respostas_certas', 'desc')->get();
+        return $usuarios;
+    }
+
     protected function buscar($login)
     {
         $usuario = Usuario::where('login', $login)->get();

@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import Monge from '../assets/Monge.png'
 import { MenuItem } from '../components/MenuItem'
 import { AuthContext } from '../contexts/auth'
@@ -16,7 +17,7 @@ export const Menu = () => {
         <div className="border-t border-orange-600">
           <nav className="flex flex-col p-2">
             <ul className="pt-4 space-y-1 flex flex-col items-center">
-              <li>
+              <Link to={'/'}>
                 <MenuItem>
                   <svg viewBox="0 0 24 24">
                     <path
@@ -25,9 +26,9 @@ export const Menu = () => {
                     />
                   </svg>
                 </MenuItem>
-              </li>
+              </Link>
 
-              <li>
+              <Link to={'/singleplayer'}>
                 <MenuItem>
                   <svg viewBox="0 0 24 24">
                     <path
@@ -36,8 +37,8 @@ export const Menu = () => {
                     />
                   </svg>
                 </MenuItem>
-              </li>
-              <li>
+              </Link>
+              <Link to={'/multiplayer'}>
                 <MenuItem>
                   <svg viewBox="0 0 24 24">
                     <path
@@ -46,8 +47,8 @@ export const Menu = () => {
                     />
                   </svg>
                 </MenuItem>
-              </li>
-              <li>
+              </Link>
+              <Link to={'/ranking'}>
                 <MenuItem>
                   <svg viewBox="0 0 24 24">
                     <path
@@ -56,7 +57,7 @@ export const Menu = () => {
                     />
                   </svg>
                 </MenuItem>
-              </li>
+              </Link>
             </ul>
           </nav>
         </div>
