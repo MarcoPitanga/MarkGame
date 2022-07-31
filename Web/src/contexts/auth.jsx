@@ -1,4 +1,4 @@
-import { useState, createContext } from 'react'
+import { useState, createContext, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Usuario } from '../model/Usuario'
 
@@ -9,6 +9,18 @@ export const AuthProvider = ({ children }) => {
   const [usuario, setUsuario] = useState()
 
   const apiUsuario = new Usuario()
+
+  useEffect(() => {
+    if (localStorage.getItem('usuario')) {
+      setUsuario({
+        id: localStorage.getItem('id'),
+        login: localStorage.getItem('usuario'),
+        total_respostas: localStorage.getItem('total_respostas'),
+        respostas_certas: localStorage.getItem('respostas_certas'),
+        respostas_erradas: localStorage.getItem('respostas_erradas')
+      })
+    }
+  }, [])
 
   const cadastrar = async (login, senha) => {
     if (!(await apiUsuario.buscar(login))) {
@@ -31,6 +43,11 @@ export const AuthProvider = ({ children }) => {
       respostas_certas: apiUsuario.respostas_certas,
       respostas_erradas: apiUsuario.respostas_erradas
     })
+    localStorage.setItem('id', apiUsuario.id)
+    localStorage.setItem('usuario', apiUsuario.login)
+    localStorage.setItem('total_respostas', apiUsuario.total_respostas)
+    localStorage.setItem('respostas_certas', apiUsuario.respostas_certas)
+    localStorage.setItem('respostas_erradas', apiUsuario.respostas_erradas)
   }
 
   const logar = async (login, senha) => {
@@ -42,12 +59,18 @@ export const AuthProvider = ({ children }) => {
         respostas_certas: apiUsuario.respostas_certas,
         respostas_erradas: apiUsuario.respostas_erradas
       })
+      localStorage.setItem('id', apiUsuario.id)
+      localStorage.setItem('usuario', apiUsuario.login)
+      localStorage.setItem('total_respostas', apiUsuario.total_respostas)
+      localStorage.setItem('respostas_certas', apiUsuario.respostas_certas)
+      localStorage.setItem('respostas_erradas', apiUsuario.respostas_erradas)
       navigate('/')
     }
   }
 
   const deslogar = () => {
     setUsuario(null)
+    localStorage.clear()
     navigate('/')
   }
 
