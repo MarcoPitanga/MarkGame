@@ -22,6 +22,17 @@ export const AuthProvider = ({ children }) => {
     return await apiUsuario.listar()
   }
 
+  const resultadoResposta = async (resultado) => {
+    await apiUsuario.salvarResposta(usuario.id, resultado)
+    setUsuario({
+      id: apiUsuario.id,
+      login: apiUsuario.login,
+      total_respostas: apiUsuario.total_respostas,
+      respostas_certas: apiUsuario.respostas_certas,
+      respostas_erradas: apiUsuario.respostas_erradas
+    })
+  }
+
   const logar = async (login, senha) => {
     if (await apiUsuario.verificarLogin(login, senha)) {
       setUsuario({
@@ -47,6 +58,7 @@ export const AuthProvider = ({ children }) => {
         usuario,
         cadastrar,
         listar,
+        resultadoResposta,
         logar,
         deslogar
       }}

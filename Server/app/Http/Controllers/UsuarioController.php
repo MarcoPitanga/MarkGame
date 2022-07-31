@@ -27,6 +27,23 @@ class UsuarioController extends Controller
         return $usuario;
     }
 
+    protected function salvarResposta(Request $req)
+    {
+        $usuario = Usuario::find($req->id);
+
+        if ($req->resultado == 'certa') {
+            $usuario->total_respostas += 1;
+            $usuario->respostas_certas += 1;
+        } else if ($req->resultado == 'errada') {
+            $usuario->total_respostas += 1;
+            $usuario->respostas_erradas += 1;
+        }
+
+        $usuario->save();
+
+        return $usuario;
+    }
+
     protected function salvar(Request $req)
     {
         $usuario =  Usuario::create([

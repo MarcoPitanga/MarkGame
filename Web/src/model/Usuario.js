@@ -38,6 +38,19 @@ export class Usuario {
     }
   }
 
+  async salvarResposta(id, resultado) {
+    const { data } = await api.post('usuario/salvarResposta', {
+      id: id,
+      resultado: resultado
+    })
+
+    this.id = data.id
+    this.login = data.login
+    this.total_respostas = data.total_respostas
+    this.respostas_certas = data.respostas_certas
+    this.respostas_erradas = data.respostas_erradas
+  }
+
   async listar() {
     const { data } = await api.get(`usuarios`)
 
