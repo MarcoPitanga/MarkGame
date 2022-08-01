@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Personagem;
+use App\Models\Pergunta;
 use App\Models\Usuario;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         Usuario::factory(10)->create();
+        Pergunta::factory(10)->create();
     }
 }

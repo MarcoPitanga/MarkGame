@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PerguntaController;
 use App\Http\Controllers\PersonagemController;
 use App\Http\Controllers\UsuarioController;
 use App\Models\Usuario;
@@ -26,3 +27,6 @@ Route::get('/usuarios/ordenado', [UsuarioController::class, 'listarOrdenado']);
 Route::get('/usuario/{login}', [UsuarioController::class, 'buscar']);
 Route::post('/usuario/cadastrar', [UsuarioController::class, 'salvar']);
 Route::post('/usuario/logar', [UsuarioController::class, 'logar']);
+Route::post('/usuario/salvarResposta', [UsuarioController::class, 'salvarResposta']);
+
+Route::get('/perguntas', [PerguntaController::class, 'perguntasRandom']);
