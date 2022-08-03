@@ -51,7 +51,6 @@ export class Usuario {
     this.respostas_erradas = data.respostas_erradas
   }
 
-
   async listar() {
     const { data } = await api.get(`usuarios`)
 
