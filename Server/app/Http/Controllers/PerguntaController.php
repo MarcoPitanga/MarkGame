@@ -9,8 +9,15 @@ class PerguntaController extends Controller
 {
     protected function perguntasRandom()
     {
-        $perguntas = Pergunta::inRandomOrder()->first();
+        $pergunta = Pergunta::inRandomOrder()->first();
 
-        return $perguntas;
+        return $pergunta;
+    }
+
+    protected function perguntaNivel($id)
+    {
+        $pergunta = Pergunta::find($id);
+
+        return $pergunta;
     }
 }

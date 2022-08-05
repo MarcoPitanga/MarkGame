@@ -5,13 +5,13 @@ import { api } from '../services/api'
 import { AuthContext } from '../contexts/auth'
 
 export const Singleplayer = () => {
-  const { resultadoResposta } = useContext(AuthContext)
+  const { usuario, resultadoResposta } = useContext(AuthContext)
 
   const [resultado, setResultado] = useState()
   const [pergunta, setPergunta] = useState()
 
   const handleClickBuscar = async () => {
-    const { data } = await api.get(`perguntas`)
+    const { data } = await api.get(`pergunta/${usuario.pergunta_atual}`)
     setPergunta(data)
   }
 

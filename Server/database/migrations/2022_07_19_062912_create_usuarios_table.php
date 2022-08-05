@@ -20,6 +20,7 @@ return new class extends Migration
             $table->integer('total_respostas')->default(0);
             $table->integer('respostas_certas')->default(0);
             $table->integer('respostas_erradas')->default(0);
+            $table->integer('pergunta_atual')->default(1);
             $table->timestamps();
         });
     }
