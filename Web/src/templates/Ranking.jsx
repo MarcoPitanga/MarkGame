@@ -19,7 +19,7 @@ export const Ranking = () => {
   }
 
   return (
-    <Layout titulo="Ranking">
+    <Layout titulo="Ranking" className="h-5/6">
       <div className="w-full h-full p-1 flex flex-col items-center text-orange-600">
         <div className="flex flex-col md:flex-row mb-5">
           <div className="m-2">
