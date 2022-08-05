@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pergunta;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 
@@ -34,9 +35,17 @@ class UsuarioController extends Controller
         if ($req->resultado == 'certa') {
             $usuario->total_respostas += 1;
             $usuario->respostas_certas += 1;
+            $usuario->pergunta_atual += 1;
         } else if ($req->resultado == 'errada') {
             $usuario->total_respostas += 1;
             $usuario->respostas_erradas += 1;
+            $usuario->pergunta_atual += 1;
+        }
+
+        $count_pergunta = Pergunta::all()->count();
+
+        if ($usuario->pergunta_atual > $count_pergunta) {
+            $usuario->pergunta_atual = 1;
         }
 
         $usuario->save();

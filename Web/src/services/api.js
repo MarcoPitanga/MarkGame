@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const baseUrl = 'https://markgame.herokuapp.com/api/'
+// eslint-disable-next-line no-undef
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 export const api = axios.create({
   baseURL: baseUrl

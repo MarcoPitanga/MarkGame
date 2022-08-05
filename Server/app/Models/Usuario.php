@@ -14,6 +14,7 @@ class Usuario extends Model
         'senha',
         'total_respostas',
         'respostas_certas',
-        'respostas_erradas'
+        'respostas_erradas',
+        'pergunta_atual'
     ];
 }

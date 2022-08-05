@@ -32,6 +32,7 @@ export class Usuario {
       this.total_respostas = resultado.total_respostas
       this.respostas_certas = resultado.respostas_certas
       this.respostas_erradas = resultado.respostas_erradas
+      this.pergunta_atual = resultado.pergunta_atual
       return true
     } else {
       return false
@@ -49,6 +50,7 @@ export class Usuario {
     this.total_respostas = data.total_respostas
     this.respostas_certas = data.respostas_certas
     this.respostas_erradas = data.respostas_erradas
+    this.pergunta_atual = data.pergunta_atual
   }
 
   async listar() {

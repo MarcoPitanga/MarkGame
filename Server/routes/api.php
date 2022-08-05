@@ -29,4 +29,4 @@ Route::post('/usuario/cadastrar', [UsuarioController::class, 'salvar']);
 Route::post('/usuario/logar', [UsuarioController::class, 'logar']);
 Route::post('/usuario/salvarResposta', [UsuarioController::class, 'salvarResposta']);
 
-Route::get('/perguntas', [PerguntaController::class, 'perguntasRandom']);
+Route::get('/pergunta/{id}', [PerguntaController::class, 'perguntaNivel']);
