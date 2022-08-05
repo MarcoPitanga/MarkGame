@@ -3,6 +3,8 @@ import { Button } from '../components/Button'
 import { useContext, useState } from 'react'
 import { api } from '../services/api'
 import { AuthContext } from '../contexts/auth'
+import somAcerto from '../assets/sounds/acerto.mp3'
+import somErro from '../assets/sounds/erro.mp3'
 
 export const Singleplayer = () => {
   const { usuario, resultadoResposta } = useContext(AuthContext)
@@ -19,9 +21,11 @@ export const Singleplayer = () => {
     if (pergunta?.opcao_certa === op) {
       setResultado('Resposta Certa')
       await resultadoResposta('certa')
+      new Audio(somAcerto).play()
     } else {
       setResultado('Resposta Errada')
       await resultadoResposta('errada')
+      new Audio(somErro).play()
     }
     setPergunta()
   }
@@ -38,7 +42,9 @@ export const Singleplayer = () => {
         </>
       ) : (
         <>
-          <h2 className="text-xl m-2 text-gray-300">{resultado}</h2>
+          <h2 className={`text-xl m-4 mb-7 ${resultado == 'Resposta Certa' ? 'text-green-500' : 'text-red-600'}`}>
+            {resultado}
+          </h2>
           <Button text="Buscar pergunta" className="w-3/3" onClick={handleClickBuscar} />
         </>
       )}
