@@ -18,11 +18,13 @@
 <h2 name="Projeto">📃 Projeto</h2>
 
 MarkGame é um jogo de perguntas e respostas baseada em conhecimentos gerais, também possui dois tipos de ranqueamento, ordenados por acertos ou total de respostas.
-
+<br/>
+<br/>
 <p align="center">
   <img src='./Github/markgame.gif' />
 </p>
 
+<br/>
 <br/>
 <h2 name="Deploy">🚀 Deploy</h2>
 
@@ -33,7 +35,7 @@ O deploy do front-end foi feito em 2 serviços diferentes:
 | Netlify  | https://markgame.netlify.app/ |
 
 <br/>
-
+<br/>
 <h2 name="Tecnologias">💻 Tecnologias</h2>
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
@@ -55,4 +57,5 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - Padrão MVC
 
 <br />
+<br/>
 <h5 name="Tecnologias">✍️ Criado por <a href='https://www.linkedin.com/in/marco-pitanga/'>Marco Aurélio</a></h5>
