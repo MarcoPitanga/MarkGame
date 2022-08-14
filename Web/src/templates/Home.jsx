@@ -14,7 +14,7 @@ export const Home = () => {
     <Layout titulo="Perfil" className="h-5/6">
       <Card>
         <div className="flex items-center justify-center m-2">
-          <span className="text-xl mb-4">Usuario</span>
+          <span className="text-xl mb-4">{usuario.login}</span>
         </div>
         <div className="flex items-center justify-between p-2 m-3 bg-gray-700 rounded-lg">
           <span>Total de Respostas</span>
