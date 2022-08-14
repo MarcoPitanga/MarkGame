@@ -34,6 +34,8 @@ O deploy do front-end foi feito em 2 serviços diferentes:
 | -------- | ----------------------------- |
 | Netlify  | https://markgame.netlify.app/ |
 
+Já o back-end está hospedado no Heroku.
+
 <br/>
 <br/>
 <h2 name="Tecnologias">💻 Tecnologias</h2>
