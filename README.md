@@ -24,7 +24,7 @@ MarkGame é um jogo de perguntas e respostas baseada em conhecimentos gerais, ta
 </p>
 
 <br/>
-<h2 name="Tecnologias">🚀 Deploy</h2>
+<h2 name="Deploy">🚀 Deploy</h2>
 
 O deploy do front-end foi feito em 2 serviços diferentes:
 
