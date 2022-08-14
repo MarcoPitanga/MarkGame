@@ -58,6 +58,24 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - MySQL
 - Padrão MVC
 
+<br/>
+<br/>
+
+<h2>Padrão de commit</h2>
+
+|Emoji|Tipo de Commit|
+|-----|-----------|
+|:tada:|first commit|
+|:art:|quando melhorar a estrutura do código|
+|:memo:|quando escrever alguma documentação|
+|:bug:|quando corrigir um bug|
+|:fire:|quando remover códigos ou arquivos|
+|:lock:|quando melhorar a segurança|
+|:construction:|em construção|
+|:rocket:|nova feature|
+|:see_no_evil:|gambiarra|
+|:gift:|nova versão|
+
 <br />
 <br/>
 <h5 name="Tecnologias">✍️ Criado por <a href='https://www.linkedin.com/in/marco-pitanga/'>Marco Aurélio</a></h5>
