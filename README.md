@@ -86,7 +86,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 <br/>
 <h2 name="Licença">📝 Licença</h2>
 
-Esse projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob licença. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 <br/>
 <br/>
