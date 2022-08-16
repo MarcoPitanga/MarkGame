@@ -1,4 +1,4 @@
-<h1 align="center">MarkGame</h1>
+<h1 name='nome-do-projeto' align="center">MarkGame</h1>
 
 <h4 align="center">
   <a href="#Projeto" >
@@ -11,6 +11,10 @@
   |
   <a href="#Tecnologias" >
     Tecnologias
+  </a>
+  |
+  <a href="#Licença" >
+    Licença
   </a>
 </h4>
 
@@ -29,9 +33,9 @@ MarkGame é um jogo de perguntas e respostas baseada em conhecimentos gerais, ta
 <h2 name="Deploy">🚀 Deploy</h2>
 
 O deploy do front-end foi feito em 2 serviços diferentes:
-
-| Firebase | https://mark-game.web.app/    |
+|Serviço|URL|
 | -------- | ----------------------------- |
+| Firebase | https://mark-game.web.app/    |
 | Netlify  | https://markgame.netlify.app/ |
 
 Já o back-end está hospedado no Heroku.
@@ -76,6 +80,15 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 |:see_no_evil:|gambiarra|
 |:gift:|nova versão|
 
-<br />
+<h5>Criado por: <a href='https://gist.github.com/crissilvaeng/dfb5b14f8eb2c25df4fd8a49f4f03252'>crissilvaeng</a></h5>
+
 <br/>
-<h5 name="Tecnologias">✍️ Criado por <a href='https://www.linkedin.com/in/marco-pitanga/'>Marco Aurélio</a></h5>
+<br/>
+<h2 name="Licença">📝 Licença</h2>
+
+Esse projeto está sob licença. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+<br/>
+<br/>
+
+[⬆ Voltar ao topo](#nome-do-projeto)<br>
